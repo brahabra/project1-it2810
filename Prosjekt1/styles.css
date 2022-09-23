@@ -1,0 +1,91 @@
+body {
+    background-color: #2b0707;
+}
+
+h1, h2, #about {
+    color: white;
+    display: flex;
+    justify-content: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+#about {
+    font-size: large;
+}
+
+#text {
+    color: white;
+    font-size: large;
+    margin: 0 200px;
+    text-align: center;
+    line-height: 1.25;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.container {
+    position: relative;
+    margin-top: 10%;
+    display: flex;
+    justify-content: center;
+}
+
+#svg:hover, #can:hover {
+    opacity: 1;
+}
+
+#svg {
+    position: relative;
+    margin-right: 2%;
+    opacity: 0.8;
+}
+
+#can {
+    opacity: 0.8;
+}
+
+button {
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 4em;
+    padding: 0.8em 1.8em;
+    border-style: solid;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-left: 65%;
+    margin-bottom: 3%;
+    cursor: pointer;
+    user-select: none;
+    transition-duration: 0.4s;
+    /*KILDE: https://freefrontend.com/css-button-click-effects/ */
+}
+
+button:hover {
+transition-duration: 0.1s;
+background-color: #3A3A3A;
+}
+
+a:visited {
+    color: #A27DF7;
+}
+
+a:link {
+    color: #73DDF5;
+}
+
+@media only screen and (max-width: 580px) {
+    #text {
+        font-size: small;
+        margin: 0 0;
+    } 
+    .container {
+        display: block;
+        margin-left: 27.5%;
+        margin-top: 2%;
+    }
+    button {
+        margin: 0 190px;
+    }
+}

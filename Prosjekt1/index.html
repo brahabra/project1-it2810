@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prosjekt 1</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+<h1>Mitt abstrakte bilde</h1>
+<h2>Om kunstneren</h2>
+<p id="about">Kunstneren er student ved NTNU og er en bussentusiast.
+   Kunstneren har derfor lagd en buss som kjører imens sola beveger seg i bakgrunnen.
+</p>
+<div class="container">
+    <svg id="svg" width="250" height="250">
+        <rect x="0" y="0" width="250" height="250"  fill="rgb(129, 205, 249)" />
+        <rect x="0" y="190" width="250" height="60" fill="grey"/>
+        <circle id="sun" cx="20" cy="16" r="15" fill="yellow">
+            <animate attributeName="cx" from="-20" to="270" dur="20s" repeatCount="indefinite" />
+        </circle>
+        <rect x="130" y="145" width="100" height="40" fill="#FED000">
+            <animate attributeName="x" from="270" to="-110" dur="4s" repeatCount="indefinite"/>
+        </rect>
+        <circle cx="210" cy="190" r="15" fill="black">
+            <animate attributeName="cx" from="350" to="-30" dur="4s" repeatCount="indefinite"/>
+        </circle>
+        <circle cx="150" cy="190" r="15" fill="black">
+            <animate attributeName="cx" from="290" to="-90" dur="4s" repeatCount="indefinite"/>
+        </circle>
+        
+    </svg>
+    <canvas id="can" width="250" height="250">
+    </canvas>
+</div>
+<button onclick="show_hide()">Dokumentasjon</button>
+<div id="text">
+    <h2>Dokumentasjon</h2>
+    <p>
+        CSS-flexbox er et fint verktøy for å kunne endre plasseringen til innholdet på en nettside. 
+        Jeg har brukt flexbox til å sentrere alle overskrifter i tillegg til de to bildene.
+        I teksten i dokumentasjonen har jeg valgt å ikke bruke flexbox
+        fordi jeg ikke ville at teksten skulle kunne gå helt ut i kantene.
+        Dette fikk jeg ikke oppnådd med flexbox.
+        Fornuftig bruk av flexbox mener jeg gjorde at nettsiden ble brukervennlig og ryddig.
+        Jeg har valgt å ikke bruke CSS-Grid da jeg ikke så behovet for det.
+    </p>
+    <p>
+        Jeg har lagd tilnærmet helt like bilder i HTML canvas og SVG.
+        Bildene består av en buss som kjører og en sol som beveger seg.
+        Solen kan endre farge ved å hovre over den.
+        For å lage elementene i canvas har jeg lagd alle elemenetene hver for seg som individuelle objekter.
+        Jeg har lagd en tegnefunksjon og en oppdateringsfunksjon for hvert objekt.
+        Oppdateringsfunksjonen endrer x-koordinatet til objektet og tegner objektet på nytt.
+        Disse objektene blir oppdatert kontinuerlig ved hjelp av requestAnimationFrame.
+        RequestAnimationFrame er på en måte en evig loop.
+        Ved å kjøre oppdateringsfunksjonen etter den vil man sørge for at x-koordinatet vil endre seg i det uendelige.
+        Oppdateringsfunksjonen sørger også for at når den når en viss x-verdi så vil den starte på en ny x-verdi,
+        slik at man får sett animasjonen igjen og igjen. For eksempel når bussen når en viss x-verdi så får den en
+        ny x-verdi slik at den flyttes til andre siden av bildet. 
+        For å få det til å se ut som objektet beveger seg så man fjerne alt innholdet fra canvasen,
+        hver gang etter å ha kalt på requestAnimationFrame-funksjonen. 
+        På denne måten får man simulert at objektene beveger seg.
+        For å endre fargen til sola ved å hovre over den så må man legge til en lytter for alle canvas elementene.
+        Man kan deretter regne ut om man treffer sola eller ikke, ved hjelp av posisjonen og radiusen til sola. 
+        For å lage elementene i SVG har jeg hardkodet elementene til å ha ønsket plassering og bevegelse.
+        Bevegelsene har jeg fikset ved hjelp av animate funksjonen.
+    </p>
+    <p>
+        Jeg har brukt jQuery på SVG for å endre fargen til sola når man hovrer over den.
+    </p>
+    <p>
+        Jeg har test nettsiden i både Google Chrome og Firefox, og den fungerer likt på begge.
+    </p>
+    <p>
+        Informasjonskildene jeg har brukt er Youtube,&nbspW3Schools og stackoverflow.
+    </p>
+    <p>
+        Kildene jeg har brukt er:&nbsp
+        <a href="https://www.youtube.com/watch?v=yq2au9EfeRQ&ab_channel=ChrisCourses">1</a>,&nbsp
+        <a href="https://www.youtube.com/watch?v=xbdJf9MRL7A&ab_channel=BananaCoding">2</a>&nbspog&nbsp
+        <a href="https://stackoverflow.com/questions/58010405/hover-effect-with-jquery-not-changing-to-default-background-color">3</a>.
+        &nbspDisse er det også refert til som kommentarer i selve koden
+    </p>
+</div>
+<script src="script.js"> </script>
+</body>
+</html>
